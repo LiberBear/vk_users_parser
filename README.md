@@ -4,5 +4,12 @@
 
 Что нужно для работы
 --------------------
-	  vk_api
-	  ConfigParser
+	  # pip install vk_api
+	  # pip install configparser
+	  
+Как пользоваться
+----------------
+	  Вписать в config.cfg данные от аккаунта ВК
+	  В groups.txt вставить список ид нмоеров, нужных групп (без приставки club)
+	  Запустить vk_users_parser.py
+	  Получить result.txt
