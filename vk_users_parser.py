@@ -1,4 +1,5 @@
 import vk_api
+import configparser
 def captcha_handler(captcha):
     key = input("Enter Captcha {0}: ".format(captcha.get_url())).strip()
     return captcha.try_again(key)
@@ -23,8 +24,12 @@ def main():
     filtered = []
     #Берем список груп из файла
     group_list = read_groups()
-    # Авторизация в ВК
-    login, password = 'ЛОГИН', 'ПАРОЛЬ'
+    # Загружаем конфиг
+    conf = configparser.RawConfigParser()
+    conf.read('config.cfg')
+    login = conf.get('account', 'login')
+    password = conf.get('account', 'password')
+    print('Loggin into ' + login)
     vk_session = vk_api.VkApi(login, password, captcha_handler=captcha_handler)
     try:
         vk_session.authorization()
@@ -34,6 +39,7 @@ def main():
     tools = vk_api.VkTools(vk_session)
     #Поочередно собираем все ид с каждой группы
     for group in group_list:
+        print('Parsing ' + group)
         parsed = parsed + parse_ids(group, tools)
     #Удаляем дубликаты
     for user in parsed:
@@ -41,5 +47,6 @@ def main():
             filtered.append(user)
     #Результат пишем в result.txt и идем пить кофе
     write_ids(filtered)
+    print('Done!')
 if __name__ == '__main__':
         main()
