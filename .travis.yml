@@ -1,9 +1,17 @@
 language: python
 python:
   - "3.5"
-# command to install dependencies
 install:
   - pip install -r requirements.txt
   - python setup.py build
-# command to run tests
 script: nosetests
+deploy:
+  provider: releases
+  api_key: "5ea3f035bbb93022e8280c05344cad259188bc2a"
+  file:
+    - "dist/*"
+    - "groups.txt"
+    - "config.cfg"
+  skip_cleanup: true
+  on:
+    tags: true
