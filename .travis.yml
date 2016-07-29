@@ -7,7 +7,7 @@ install:
 script: nosetests
 deploy:
   provider: releases
-  api_key: "5ea3f035bbb93022e8280c05344cad259188bc2a"
+  api_key: "e1c095fdf9cc325d9ac169ba447c19c234494095"
   file:
     - "dist/*"
     - "groups.txt"
