@@ -4,7 +4,6 @@ python:
   - "pypy"
 # command to install dependencies
 install:
-  - pip install .
   - pip install -r requirements.txt
 # command to run tests
 script: vk_users_parser.py
