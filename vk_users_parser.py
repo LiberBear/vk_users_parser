@@ -48,5 +48,6 @@ def main():
     #Результат пишем в result.txt и идем пить кофе
     write_ids(filtered)
     print('Done!')
+    input('Press Enter...')
 if __name__ == '__main__':
         main()

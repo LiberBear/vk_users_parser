@@ -1,0 +1,2 @@
+vk-api==3.1
+configparser==3.5.0
