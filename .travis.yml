@@ -5,13 +5,4 @@ install:
   - pip install -r requirements.txt
   - python setup.py build
 script: nosetests
-deploy:
-  provider: releases
-  api_key: "e1c095fdf9cc325d9ac169ba447c19c234494095"
-  file:
-    - "dist/*"
-    - "groups.txt"
-    - "config.cfg"
-  skip_cleanup: true
-  on:
-    tags: true
+
