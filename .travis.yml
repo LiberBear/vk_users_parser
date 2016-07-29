@@ -5,5 +5,6 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
+  - python setup.py build
 # command to run tests
-script: vk_users_parser.py
+script: nosetests
