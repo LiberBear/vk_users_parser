@@ -4,5 +4,5 @@ setup(
     name = 'vk_users_parser',
     version = '0.1',
     description = 'Parsing users from groups',
-    executables = [Executable(vk_users_parser.py)]
+    executables = [Executable("vk_users_parser.py")]
 )
